@@ -1,0 +1,235 @@
+/*! Luxeritas Child CSS */
+/* Luxeritas WordPress Theme - free/libre wordpress platform
+ *
+ * @copyright Copyright (C) 2015 Thought is free.
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ * @author LunaNuko
+ * @link http://thk.kanzae.net/
+ * @translators rakeem( http://rakeem.jp/ )
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ *   Theme Name: Luxeritas Child Theme
+ *   Template: luxeritas
+ *   Text Domain: luxech
+ *   Theme URI: http://thk.kanzae.net/wp/
+ *   Description: SEO optimized, Responsive layout, Super Fast, Multi Feature, Bootstrap
+ *   Author: LunaNuko
+ *   Author URI: http://thk.kanzae.net/
+ *   License: GNU General Public License v2 or later
+ *   License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *   Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-background, custom-colors, custom-menu, theme-options, featured-image-header, editor-style, sticky-post, threaded-comments, translation-ready
+ *   Since: 20151206
+ *   Modify: 20200401
+ *   Version: 3.0.3
+ *   Template Version: 3
+ *
+ * ここから上を消すと正しく動作しなくなることがあります。
+ * ( Erasing the elements above here might cause system issues. )
+ */
+
+/* 以下、好みに応じて子テーマ用のスタイルをお書きください。
+ * ( Below here, please write down your own styles for the child theme. )
+*/
+
+#head-in {
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.container {
+	margin-top: 200px;
+	bottom: -100px;
+}
+
+@media screen and (max-width:576px) {
+	header img {
+		width: 70%;
+	}
+	.container {
+		margin-top: 150px;
+	}
+}
+
+
+#sform {
+	display: none;
+}
+
+footer {
+	background-color: #333 !important;
+}
+
+footer .foot-nav .menu {
+	padding: 3em 0 5em 5rem !important;
+}
+
+footer .foot-nav .menu-item {
+	display: block;
+	padding: 1em 0 0 0 ;
+	text-align: left;
+}
+
+footer .foot-nav .menu-item:last-child{
+	margin-top: 5em;
+	width: 15em;
+}
+
+@media screen and (max-width:576px) {
+	footer .foot-nav .menu {
+		padding: 3em 0 5em 2rem !important;
+	}
+}
+
+footer .foot-nav .menu-item a{
+	color: rgb(187, 185, 185);
+}
+
+footer .foot-nav .menu-item::before {
+	content: "";
+	margin: 0;
+}
+
+footer .foot-nav .menu-item:first-child a{
+	font-size: larger;
+	color: #fff;
+}
+
+#copyright .copy{
+	display: none;
+	}
+
+
+
+/* Trigger
+------------------------------ */
+.s-header__trigger {
+	position: relative;
+	z-index: 9999;
+	width: 3.125rem;
+	height: 3.125rem;
+	float: right;
+	overflow: hidden;
+	transition-duration: 500ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+  /* Trigger Icon */
+.s-header__trigger-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	right: auto;
+	bottom: auto;
+	width: 1.375rem;
+	height: 0.0625rem;
+	background: #fff;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+	transition-duration: 500ms;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
+}
+
+.s-header__trigger-icon:before, .s-header__trigger-icon:after {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	content: " ";
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: transform 0.5s, width 0.5s, top 0.3s;
+	transition: transform 0.5s, width 0.5s, top 0.3s;
+}
+.s-header__trigger-icon:before {
+	-webkit-transform-origin: left top;
+	transform-origin: left top;
+	-webkit-transform: translate3d(0, 0.4375rem, 0);
+	transform: translate3d(0, 0.4375rem, 0);
+}
+
+.s-header__trigger-icon:after {
+	-webkit-transform-origin: left top;
+	transform-origin: left top;
+	-webkit-transform: translate3d(0, -0.4375rem, 0);
+	transform: translate3d(0, -0.4375rem, 0);
+}
+
+.s-header__trigger--dark .s-header__trigger-icon {
+	background: #222324;
+}
+
+.s-header__trigger svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.s-header__trigger circle {
+	-webkit-transition: stroke-dashoffset 0.4s 0s;
+	transition: stroke-dashoffset 0.4s 0s;
+}
+
+  /* Trigger Is Active Style */
+.-is-active.s-header__trigger {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.-is-active .s-header__trigger-icon {
+	background: #fff;
+}
+
+.-is-active .s-header__trigger-icon:before, .-is-active .s-header__trigger-icon:after {
+	width: 50%;
+	-webkit-transition: transform 0.5s, width 0.5s;
+	transition: transform 0.5s, width 0.5s;
+  }
+  
+  .-is-active .s-header__trigger-icon:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+  
+  .-is-active .s-header__trigger-icon:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  }
+  
+  .-is-active.s-header__trigger circle {
+	stroke-dashoffset: 0;
+	-webkit-transition: stroke-dashoffset 0.4s 0.3s;
+	transition: stroke-dashoffset 0.4s 0.3s;
+  }
+  
+  /* Overlay
+  ------------------------------ */
+  .s-header-bg-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background: rgba(34, 35, 36, 0);
+	visibility: hidden;
+	-webkit-transition: all 1s ease-in 0.4s;
+	transition: all 1s ease-in 0.4s;
+  }
+  
+  .s-header-bg-overlay.-is-open {
+	background: rgba(34, 35, 36, 0.99);
+	visibility: visible;
+	-webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+  }
